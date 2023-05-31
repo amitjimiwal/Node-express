@@ -2,27 +2,21 @@ const express=require('express')
 const path=require('path')
 const app=express();
 const port=4000;
-
+const bodyParser=require('body-parser'); //its used to get access to the req.body 
 // GET ==Read
+app.use(bodyParser.urlencoded({extended:false}))
 app.get('/',(req,res)=>{
       // res.send('Hello World')
       // sending html pages
       res.sendFile(path.join(__dirname+'/index.html'))
 })
-app.get('/home',(req,res)=>{
-      res.send('Hello home')
-})
-app.get('/contact',(req,res)=>{
-      res.send('Hello contact')
-})
-app.get('/about',(req,res)=>{
-      res.send('Hello About')
-})
-app.get('*',(req,res)=>{
-      res.send('Hello Kya dalra hai')
-})
 
 // Post == create
+app.post('/jimmy',(req,res)=>{
+      // res.send('Done');
+      console.log(req.body)
+      res.send(`<h1> Your name is : ${req.body.name}</h1> <h1> Your email  is : ${req.body.email}</h1>`)
+})
 
 
 
