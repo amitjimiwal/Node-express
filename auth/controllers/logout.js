@@ -1,5 +1,5 @@
 const userLogout=(req,res)=>{
-      res.cookie("name",null,{
+      res.cookie("token",null,{
             expires: new Date(Date.now())
       })
       res.redirect('/')
