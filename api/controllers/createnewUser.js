@@ -1,17 +1,14 @@
 const Users=require('../models/User')
 const createnewUSer=async(req,res)=>{
-      const a=req.body
       try{
-            // const user= await Users.create({
-            //       name:name,
-            //       email:email
-            //       // name:'Amit',
-            //       // email:'am@gmail.com'
-            // })
-            res.status(200).cookie("lol","hurray").json({
+            const user= await Users.create({
+                  name:name,
+                  email:email
+            })
+            res.status(201).json({
                   success:true,
                   message:'Registered successfully',
-                  a
+
             }) 
       }
       catch(err){
