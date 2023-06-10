@@ -11,5 +11,5 @@ router.route('/').get(def)
 // get all users api
 router.route('/user/all').get(getallusers)
 router.route('/user/new').post(createnewuSer)
-router.route('/userid/:id').get(getuser)
+router.route('/user/:id').get(getuser)
 module.exports=router
