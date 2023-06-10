@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
 // used to connect mongodb to the server
 const app = express();
-const port = 4000;
+const port = 5000;
 const router = require("./routes/appRoutes");
 connectdatabase()
 app.use(cookparser());
